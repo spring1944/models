@@ -1,0 +1,2 @@
+Scale: all models are made with 1 unit = 1 meter scale. That means they need to be scaled approx. 2.5 to fit S'44.
+Also, be sure to check with reference photos for any mirroring - I've seen my models appear x-axis mirrored in Spring while they weren't in my modeling prog.

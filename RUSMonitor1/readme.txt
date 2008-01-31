@@ -1,0 +1,6 @@
+Weapon systems found on this ship:
+Main turret - 2x102mm/60 (4") naval guns m1911. 12 shots per minute, 30kg shell, muzzle velocity: 823m/s, max. range: 16100m. Vertical aim speed - 3 degrees per second. The same guns are used on border guard ships, only in open-mount single-barrel version.
+Secondary turrets - 40-K (single-barrel rear turret) and 41-K (double-barrel front turret) 21-K 45mm guns, basically an adaptation of 19-K 45mm gun to naval use. The same gun is used on T-70. Some bright person in the 1930s decided they would make a good AA so the naval version is able to fire at aerial targets (but isn't likely to do much damage to them as it has no distance fuse, only a direct hit will do damage, and the gun isn't automatic even). That gun is also found on some Soviet ships designed in the second half of 1930s, they were being replaced by 37mm guns at the first opportunity (monitors had quite a low priority in this)
+AA turrets - 70-K 37mm naval AA guns, basically a ship-based version of 61-K, all data is the same. That gun is found on most medium/large Soviet ships, sometimes even on smaller ones.
+Small MG turrets - 12.7mm DShK. The same turrets are used on BKA boats. Can also contain 12.7mm Colt or Vickers MG if those were available at the time of ship construction.
+Open-mount MG - the same 12.7mm DShK (or Colt, or Vickers if those were available).
