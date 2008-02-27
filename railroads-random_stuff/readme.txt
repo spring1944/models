@@ -1,6 +1,9 @@
 Here are some random bits and pieces related to railroads.
 
+station - a small passenger station, likely to be found in some small to medium town. Not exactly rural.
+c-sign - a sign with C letter. This is used to indicate places where train's horn must be sounded (like in front of stations, bridges, tunnels and such). This model is UVMapped and even textured (tex1 only, in BMP format), but I'm not sure I can do more complex texturing yet.
 semaphore - those things are a common sight along the tracks
+water-tower - this is a water tower, used to refill steam locomotives. A common sight near many stations or industrial zones (where rail traffic is heavy). The building is meant to be octagonal, no need to smooth it. Here is an example: http://ys.mmc.ru/imgr/bark/pic123.jpg
 USSR-rails - this is a piece of mainline track modelled according to USSR state standards. Repeat this tile to get any length of track you need. Remember, USSR track width was 1524mm pre-war and 1520mm post-war (the model is accurate to the centimeters, millimeter accuracy isn't guaranteed). Standard Soviet wagons are able to run on both 1524 and 1520 tracks without any modifications (though older wagons built for 1524 will suffer increased wear if running on 1520 track). That basically means this tile is good for any period Soviet wide-gauge railroad.
 small-flatcar - this is a small 2-axle flatcar used in Russia pre-war. A couple of those loaded with rails and other track repair materials is a common sight at the front AND at the back of any armoured train. In this case, they are called control flatcars and serve to protect the train from mines (at low speeds mines would derail only them and not train's armoured wagons).
 minin-loco - this is a type Ov armoured locomotive, standard for Soviet armoured trains. I should have probably made the tender as separate piece (so it can be articulated), but it isn't that long, so should do as one piece with the loco.
