@@ -1,0 +1,59 @@
+[UNITINFO]
+{
+	cobID=3002;
+	Name=Rail Station;
+	UnitName=test_station;
+		
+	//    Required Tags
+	BuildCostEnergy=1;
+	BuildCostMetal=1;
+	BuildTime=50;
+	Category=LAND NOTAIR NOTLIGHT;
+	Description=Allows Trains to be built;
+	FootprintX=2;
+	FootprintZ=2;
+	MaxDamage=15000;
+	ObjectName=test_track;
+	BuildPic=heavy_block-bp.jpg;
+	Side=HUMANS;
+	SoundCategory=NONE;
+	TEDClass=FORT;
+	
+	//    Movement
+	BrakeRate=0;
+	Acceleration=0;
+	MaxVelocity=0;
+	MaxSlope=32;
+	TurnRate=0;
+	levelground=0;
+
+	//    Airplane Moventment
+	
+	//    Buildings
+	YardMap=oo oo;
+	
+	//    Construction
+	Builder=0;
+	WorkerTime=0;
+	
+	//    Resources
+	EnergyMake=0;
+	EnergyStorage=0;
+	EnergyUse=0;
+	MetalStorage=0;
+	
+	//    Sight/Radar
+	RadarDistance=0;
+	SightDistance=0;
+	
+	//    Weapons
+	
+	//    Tracks/Flares
+	
+	//    Watersettings
+	MaxWaterDepth=1;
+	[customParams]
+	{
+		isRailTrack=1;
+	}	
+}

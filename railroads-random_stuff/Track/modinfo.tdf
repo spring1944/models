@@ -1,0 +1,12 @@
+[MOD]
+{
+	Name=Railroad test;
+	ShortName=RT;
+	game=SmallMod;
+	ShortGame=SM;
+
+	ModType=1;
+
+	NumDependencies=1;
+	Depend0=SmallMod.sdd;
+}

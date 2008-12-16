@@ -3,6 +3,7 @@
 
 #include "train_commands.h"
 #include "exptype.h"
+#include "railID.h"
 
 static-var bTrainHere, trainDirection;
 
@@ -25,17 +26,34 @@ lua_CreateRailTrack(unitID, teamID, x, y, z, dir, linknum)
 {
 }
 
+lua_CreateTrain(unitID, teamID, stationID, x, y, z, dir)
+{
+}
+
 SetLink(unitId, ownLinkNum, otherLinkNum)
 {
+	// get PRINT(get MY_ID, unitId, ownLinkNum, otherLinkNum);
 	if(ownLinkNum == 1)
 	{
 		link1Id = unitId;
 		otherLink1 = otherLinkNum;
+		if(unitId > 0)
+		{
+			show link1;
+		} else {
+			hide link1;
+		}
 	}
 	if(ownLinkNum == 2)
 	{
 		link2Id = unitId;
 		otherLink2 = otherLinkNum;
+		if(unitId > 0)
+		{
+			show link2;
+		} else {
+			hide link2;
+		}
 	}
 }
 
@@ -67,7 +85,7 @@ CheckTrainStatus()
 			// there is a piece of track after this one
 			bTrainHere = FALSE;
 			call-script lua_TrainToNextTrackSection(trainId, link2Id, otherLink2);
-			trainId = 0;
+			//trainId = 0;
 			signal SIG_STOP;
 		} else {
 			// no track beyond here, let's send the train back
@@ -76,7 +94,7 @@ CheckTrainStatus()
 			trainDirection = -1;
 		}
 	}
-	if(trainDirection == 2)
+	if(trainDirection == -1)
 	{
 		// Pass the train to the next track section, if any
 		if(link1Id > 0)
@@ -84,7 +102,7 @@ CheckTrainStatus()
 			// there is a piece of track after this one
 			bTrainHere = FALSE;
 			call-script lua_TrainToNextTrackSection(trainId, link1Id, otherLink1);
-			trainId = 0;
+			// trainId = 0;
 			signal SIG_STOP;
 		} else {
 			// no track beyond here, let's send the train back (back forward in this case)
@@ -142,11 +160,19 @@ TrainEnters(unitId, linkNum)
 	set-signal-mask SIG_TRAINENTER|SIG_DEATH;
 	bTrainHere = TRUE;
 	trainId = unitId;
+	if(linkNum == 0)
+	{
+		// Train built at the station
+		trainDirection = 0;
+		move train to z-axis 0 now;
+	}
 	if(linkNum == 1)
 	{
 		trainDirection = 1;
 		move train to z-axis LINK1_Z now;
-	} else {
+	}
+	if(linkNum == 2)
+	{
 		trainDirection = -1;
 		move train to z-axis LINK2_Z now;
 	}
