@@ -1,0 +1,204 @@
+[unitinfo] {
+  unitname=RUSGangut;
+  name=Soviet Battleship;
+  description=Capital Ship;
+  acceleration=0.05;
+  activateWhenBuilt=1;
+  airSightDistance=1700;
+  brakeRate=0.025;
+  buildCostEnergy=0;
+  buildCostMetal=27000;
+  buildTime=27000;
+  canAttack=1;
+  canMove=1;
+  category=LARGESHIP MINETRIGGER;
+  collisionVolumeOffsets=0.0 -50.0 0.0;
+  collisionVolumeScales=85.0 130.0 600.0;
+  collisionVolumeType=box;
+  corpse=RUSGangut_dead;
+  [customParams] {
+    dontCount=1;
+  }
+  energyMake=0;
+  energyUse=0;
+  explodeAs=Vehicle_Explosion_Sm;
+  floater=1;
+  footprintX=8;
+  footprintZ=8;
+  iconType=destroyer;
+  mass=190500;
+  maxDamage=190500;
+  maxReverseVelocity=1.9;
+  maxVelocity=3.8;
+  minWaterDepth=20;
+  movementClass=BOAT_Destroyer;
+  noChaseCategory=FLAG AIR MINE;
+  objectName=RUSGangut;
+  radarDistance=4000;
+  seismicSignature=0;
+  selfDestructAs=Vehicle_Explosion_Sm;
+  [sfxtypes] {
+    explosionGenerator0=custom:SMOKEPUFF_GPL_FX;
+    explosionGenerator1=custom:MEDIUM_MUZZLEFLASH;
+    explosionGenerator2=custom:MEDIUM_MUZZLEDUST;
+    explosionGenerator3=custom:SMALL_MUZZLEFLASH;
+    explosionGenerator4=custom:SMALL_MUZZLEDUST;
+    explosionGenerator5=custom:XSMALL_MUZZLEFLASH;
+    explosionGenerator6=custom:XSMALL_MUZZLEDUST;
+    explosionGenerator7=custom:MG_MUZZLEFLASH;
+    explosionGenerator8=custom:LARGE_MUZZLEFLASH;
+    explosionGenerator9=custom:LARGE_MUZZLEDUST;
+  }
+  showNanoFrame=0;
+  sightDistance=2000;
+  smoothAnim=0;
+  SoundCategory=RUSBoat;
+  stealth=0;
+  TEDClass=SHIP;
+  turnRate=112.5;
+
+	// 305mm
+	weapon1=rus305mm52m1907;
+	weaponMainDir1=0 0 1;
+	maxAngleDif1=240;
+	onlyTargetCategory1=BUILDING INFANTRY SOFTVEH OPENVEH HARDVEH SHIP LARGESHIP DEPLOYED;
+
+	weapon2=rus305mm52m1907;
+	weaponMainDir2=0 0 -1;
+	maxAngleDif2=240;
+	onlyTargetCategory2=BUILDING INFANTRY SOFTVEH OPENVEH HARDVEH SHIP LARGESHIP DEPLOYED;
+
+	weapon3=rus305mm52m1907;
+	weaponMainDir3=0 0 1;
+	maxAngleDif3=240;
+	onlyTargetCategory3=BUILDING INFANTRY SOFTVEH OPENVEH HARDVEH SHIP LARGESHIP DEPLOYED;
+
+	weapon4=rus305mm52m1907;
+	weaponMainDir4=0 0 -1;
+	maxAngleDif4=240;
+	onlyTargetCategory4=BUILDING INFANTRY SOFTVEH OPENVEH HARDVEH SHIP LARGESHIP DEPLOYED;
+
+	// 120mm
+	weapon5=rus120mm50m1905;
+	weaponMainDir5=1 0 1;
+	maxAngleDif5=100;
+	onlyTargetCategory5=BUILDING INFANTRY SOFTVEH OPENVEH HARDVEH SHIP LARGESHIP DEPLOYED;
+
+	weapon6=rus120mm50m1905;
+	weaponMainDir6=-1 0 1;
+	maxAngleDif6=100;
+	onlyTargetCategory6=BUILDING INFANTRY SOFTVEH OPENVEH HARDVEH SHIP LARGESHIP DEPLOYED;
+
+	weapon7=rus120mm50m1905;
+	weaponMainDir7=1 0 1;
+	maxAngleDif7=100;
+	onlyTargetCategory7=BUILDING INFANTRY SOFTVEH OPENVEH HARDVEH SHIP LARGESHIP DEPLOYED;
+
+	weapon8=rus120mm50m1905;
+	weaponMainDir8=-1 0 1;
+	maxAngleDif8=100;
+	onlyTargetCategory8=BUILDING INFANTRY SOFTVEH OPENVEH HARDVEH SHIP LARGESHIP DEPLOYED;
+
+	weapon9=rus120mm50m1905;
+	weaponMainDir9=1 0 1;
+	maxAngleDif9=100;
+	onlyTargetCategory9=BUILDING INFANTRY SOFTVEH OPENVEH HARDVEH SHIP LARGESHIP DEPLOYED;
+
+	weapon10=rus120mm50m1905;
+	weaponMainDir10=-1 0 1;
+	maxAngleDif10=100;
+	onlyTargetCategory10=BUILDING INFANTRY SOFTVEH OPENVEH HARDVEH SHIP LARGESHIP DEPLOYED;
+
+	weapon11=rus120mm50m1905;
+	weaponMainDir11=1 0 1;
+	maxAngleDif11=100;
+	onlyTargetCategory11=BUILDING INFANTRY SOFTVEH OPENVEH HARDVEH SHIP LARGESHIP DEPLOYED;
+
+	weapon12=rus120mm50m1905;
+	weaponMainDir12=-1 0 1;
+	maxAngleDif12=100;
+	onlyTargetCategory12=BUILDING INFANTRY SOFTVEH OPENVEH HARDVEH SHIP LARGESHIP DEPLOYED;
+
+	weapon13=rus120mm50m1905;
+	weaponMainDir13=1 0 -1;
+	maxAngleDif13=100;
+	onlyTargetCategory13=BUILDING INFANTRY SOFTVEH OPENVEH HARDVEH SHIP LARGESHIP DEPLOYED;
+
+	weapon14=rus120mm50m1905;
+	weaponMainDir14=-1 0 -1;
+	maxAngleDif14=100;
+	onlyTargetCategory14=BUILDING INFANTRY SOFTVEH OPENVEH HARDVEH SHIP LARGESHIP DEPLOYED;
+
+	weapon15=rus120mm50m1905;
+	weaponMainDir15=1 0 -1;
+	maxAngleDif15=100;
+	onlyTargetCategory15=BUILDING INFANTRY SOFTVEH OPENVEH HARDVEH SHIP LARGESHIP DEPLOYED;
+
+	weapon16=rus120mm50m1905;
+	weaponMainDir16=-1 0 -1;
+	maxAngleDif16=100;
+	onlyTargetCategory16=BUILDING INFANTRY SOFTVEH OPENVEH HARDVEH SHIP LARGESHIP DEPLOYED;
+
+	weapon17=rus120mm50m1905;
+	weaponMainDir17=1 0 -1;
+	maxAngleDif17=100;
+	onlyTargetCategory17=BUILDING INFANTRY SOFTVEH OPENVEH HARDVEH SHIP LARGESHIP DEPLOYED;
+
+	weapon18=rus120mm50m1905;
+	weaponMainDir18=-1 0 -1;
+	maxAngleDif18=100;
+	onlyTargetCategory18=BUILDING INFANTRY SOFTVEH OPENVEH HARDVEH SHIP LARGESHIP DEPLOYED;
+
+	weapon19=rus120mm50m1905;
+	weaponMainDir19=1 0 -1;
+	maxAngleDif19=100;
+	onlyTargetCategory19=BUILDING INFANTRY SOFTVEH OPENVEH HARDVEH SHIP LARGESHIP DEPLOYED;
+
+	weapon20=rus120mm50m1905;
+	weaponMainDir20=-1 0 -1;
+	maxAngleDif20=100;
+	onlyTargetCategory20=BUILDING INFANTRY SOFTVEH OPENVEH HARDVEH SHIP LARGESHIP DEPLOYED;
+
+	// 76mm AA
+	weapon21=34k76mmaa;
+	weaponMainDir21=0 0 1;
+	maxAngleDif21=120;
+	onlyTargetCategory21=BUILDING INFANTRY SOFTVEH AIR OPENVEH HARDVEH SHIP LARGESHIP DEPLOYED;
+
+	weapon22=34k76mmaa;
+	weaponMainDir22=1 0 1;
+	maxAngleDif22=120;
+	onlyTargetCategory22=BUILDING INFANTRY SOFTVEH AIR OPENVEH HARDVEH SHIP LARGESHIP DEPLOYED;
+
+	weapon23=34k76mmaa;
+	weaponMainDir23=-1 0 1;
+	maxAngleDif23=120;
+	onlyTargetCategory23=BUILDING INFANTRY SOFTVEH AIR OPENVEH HARDVEH SHIP LARGESHIP DEPLOYED;
+
+	weapon24=34k76mmaa;
+	weaponMainDir24=0 0 -1;
+	maxAngleDif24=120;
+	onlyTargetCategory24=BUILDING INFANTRY SOFTVEH AIR OPENVEH HARDVEH SHIP LARGESHIP DEPLOYED;
+
+	weapon25=34k76mmaa;
+	weaponMainDir25=1 0 -1;
+	maxAngleDif25=120;
+	onlyTargetCategory25=BUILDING INFANTRY SOFTVEH AIR OPENVEH HARDVEH SHIP LARGESHIP DEPLOYED;
+
+	weapon26=34k76mmaa;
+	weaponMainDir26=-1 0 -1;
+	maxAngleDif26=120;
+	onlyTargetCategory26=BUILDING INFANTRY SOFTVEH AIR OPENVEH HARDVEH SHIP LARGESHIP DEPLOYED;
+
+	// 37mm AA
+	weapon27=61k37mmaa;
+	maxAngleDif27=270;
+	onlyTargetCategory27=BUILDING INFANTRY SOFTVEH AIR OPENVEH HARDVEH SHIP LARGESHIP DEPLOYED;
+	weaponMainDir27=1 0 0;
+
+	weapon28=61k37mmaa;
+	maxAngleDif28=270;
+	onlyTargetCategory28=BUILDING INFANTRY SOFTVEH AIR OPENVEH HARDVEH SHIP LARGESHIP DEPLOYED;
+	weaponMainDir28=-1 0 0;
+}
+
