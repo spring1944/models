@@ -239,7 +239,6 @@ local function AimTripleTurret(heading, pitch, turret, sleeve1, sleeve2, sleeve3
 end
 
 -- End of generic fucntions
-
 -- Some init stuff, to be called from Create
 local function Init()
 	-- Fill main_flares and main_barrels tables
@@ -869,7 +868,7 @@ end
 
 function script.AimWeapon29(heading, pitch)
 	local tmpHeading
-	tmpHeading = GetPieceRotation(main_turret1)
+	_,tmpHeading,_ = GetPieceRotation(main_turret1)
 	AimTurretedWeapon(heading-tmpHeading, pitch, aa37_turret_11, aa37_sleeve_11, SIG_AIM29, AA37_TURN_SPEED, AA37_PITCH_SPEED)
 end
 
@@ -887,7 +886,7 @@ end
 
 function script.AimWeapon30(heading, pitch)
 	local tmpHeading
-	tmpHeading = GetPieceRotation(main_turret1)
+	_,tmpHeading,_ = GetPieceRotation(main_turret1)
 	AimTurretedWeapon(heading-tmpHeading, pitch, aa37_turret_12, aa37_sleeve_12, SIG_AIM30, AA37_TURN_SPEED, AA37_PITCH_SPEED)
 end
 
@@ -905,7 +904,7 @@ end
 
 function script.AimWeapon31(heading, pitch)
 	local tmpHeading
-	tmpHeading = GetPieceRotation(main_turret1)
+	_,tmpHeading,_ = GetPieceRotation(main_turret1)
 	AimTurretedWeapon(heading-tmpHeading, pitch, aa37_turret_13, aa37_sleeve_13, SIG_AIM31, AA37_TURN_SPEED, AA37_PITCH_SPEED)
 end
 
