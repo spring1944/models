@@ -119,20 +119,20 @@ local AA37_PITCH_SPEED = rad(25)
 
 -- Recoil distances
 local MAIN_RECOIL = -20
-local MAIN_RECOIL_SPEED = 10
-local MAIN_RETURN_SPEED = 2
+local MAIN_RECOIL_SPEED = 40
+local MAIN_RETURN_SPEED = 5
 
 local SIDE_RECOIL = -5
-local SIDE_RECOIL_SPEED = 10
-local SIDE_RETURN_SPEED = 4
+local SIDE_RECOIL_SPEED = 40
+local SIDE_RETURN_SPEED = 10
 
 local AA76_RECOIL = -2.5
-local AA76_RECOIL_SPEED = 10
-local AA76_RETURN_SPEED = 6
+local AA76_RECOIL_SPEED = 40
+local AA76_RETURN_SPEED = 15
 
 local AA37_RECOIL = -1
-local AA37_RECOIL_SPEED = 10
-local AA37_RETURN_SPEED = 8
+local AA37_RECOIL_SPEED = 40
+local AA37_RETURN_SPEED = 20
 
 -- Variables to store multi-gun turret states
 local gun1 = 1
@@ -156,6 +156,40 @@ WAKE = 3
 BLACK_SMOKE = 256 + 2
 
 -- Aiming and other gun-related functions are generalized
+-- Restore turret angles
+function RestoreTurrets()
+	-- exclude SIG_MOVE
+	SetSignalMask(SIG_AIM23-2)
+	-- wait for the largest gun to reload, and then some
+	Sleep(Spring.UnitScript.GetLongestReloadTime(unitID)*1.5)
+	-- main turrets
+	for i=1, 4 do
+		Turn(piece("main_turret"..i), y_axis, rad(180)*(math.fmod(i+1, 2)), MAIN_TURN_SPEED)
+		for j=1, 3 do
+			Turn(piece("main_sleeve"..i..j), x_axis, 0, MAIN_PITCH_SPEED)
+			-- 37mm guns on top the main turrets
+			Turn(piece("aa37_turret_"..i..j), y_axis, 0, AA37_TURN_SPEED)
+			Turn(piece("aa37_sleeve_"..i..j), x_axis, 0, AA37_PITCH_SPEED)
+		end
+	end
+	-- side turrets
+	for i=1, 8 do
+		Turn(piece("side_turret"..i), y_axis, 0, SIDE_TURN_SPEED)
+		Turn(piece("side_turret"..(i+8)), y_axis, rad(180), SIDE_TURN_SPEED)
+	end
+	-- 76mm turrets
+	for i=1, 3 do
+		Turn(piece("aa76_turret"..i), y_axis, 0, AA76_TURN_SPEED)
+		Turn(piece("aa76_turret"..(i+3)), y_axis, rad(180), AA76_TURN_SPEED)
+		Turn(piece("aa76_sleeve"..i), x_axis, 0, AA76_PITCH_SPEED)
+		Turn(piece("aa76_sleeve"..(i+3)), x_axis, 0, AA76_PITCH_SPEED)
+	end
+	-- 37mm turrets NOT on top main guns
+	for i=1, 2 do
+		Turn(piece("aa37_turret_0"..i), y_axis, 0, AA37_TURN_SPEED)
+		Turn(piece("aa37_sleeve_0"..i), x_axis, 0, AA37_PITCH_SPEED)
+	end
+end
 
 local function AimTurretedWeapon(heading, pitch, turret, sleeve, signal, turn_speed, pitch_speed)
 	-- Aim a generuc turret which has a sleeve
@@ -165,6 +199,7 @@ local function AimTurretedWeapon(heading, pitch, turret, sleeve, signal, turn_sp
 	Turn(sleeve, x_axis, -pitch, pitch_speed)
 	WaitForTurn(turret, y_axis)
 	WaitForTurn(sleeve, x_axis)
+	StartThread(RestoreTurrets)
 	return true
 end
 
@@ -174,6 +209,7 @@ local function AimTurretedWeapon_NoSleeve(heading, pitch, turret, signal, turn_s
 	SetSignalMask(signal)
 	Turn(turret, y_axis, heading, turn_speed)
 	WaitForTurn(turret, y_axis)
+	StartThread(RestoreTurrets)
 	return true
 end
 
@@ -198,6 +234,7 @@ local function AimTripleTurret(heading, pitch, turret, sleeve1, sleeve2, sleeve3
 	Turn(sleeve3, x_axis, -pitch, pitch_speed)
 	WaitForTurn(turret, y_axis)
 	WaitForTurn(sleeve1, x_axis)
+	StartThread(RestoreTurrets)
 	return true
 end
 
@@ -207,19 +244,17 @@ end
 local function Init()
 	-- Fill main_flares and main_barrels tables
 	-- Hide main flares while we're at it
-	local temp_table1 = {}
-	local temp_table2 = {}
 	-- loop trough 4 main turrets
 	for i=1, 4 do
 		-- each turret has 3 sleeve and 3 gun pieces
+		main_flares[i]={}
+		main_barrels[i]={}
 		for j=1, 3 do
-			temp_table1[j]=piece('main_flare'..i..j)
-			temp_table2[j]=piece('main_gun'..i..j)
-			Hide(temp_table1[j])
+			main_flares[i][j]=piece("main_flare"..i..j)
+			main_barrels[i][j]=piece("main_gun"..i..j)
+			Hide(main_flares[i][j])
 			Hide(piece("aa37_flare_"..i..j))
 		end
-		main_flares[i]=temp_table1
-		main_barrels[i]=temp_table2
 	end
 	-- Hide the rest of flares
 	for i=1, 16 do
@@ -233,17 +268,12 @@ local function Init()
 	-- Pre-position turrets
 	Turn(main_turret2, y_axis, rad(180))
 	Turn(main_turret4, y_axis, rad(180))
-	Turn(aa76_turret4, y_axis, rad(180))
-	Turn(aa76_turret5, y_axis, rad(180))
-	Turn(aa76_turret6, y_axis, rad(180))
-	Turn(side_turret9, y_axis, rad(180))
-	Turn(side_turret10, y_axis, rad(180))
-	Turn(side_turret11, y_axis, rad(180))
-	Turn(side_turret12, y_axis, rad(180))
-	Turn(side_turret13, y_axis, rad(180))
-	Turn(side_turret14, y_axis, rad(180))
-	Turn(side_turret15, y_axis, rad(180))
-	Turn(side_turret16, y_axis, rad(180))
+	for i=4, 6 do
+		Turn(piece("aa76_turret"..i), y_axis, rad(180))
+	end
+	for i=9, 16 do
+		Turn(piece("side_turret"..i), y_axis, rad(180))	
+	end
 end
 
 -- Here the real guns start
@@ -827,7 +857,61 @@ end
 
 function script.Shot28()
 end
--- There are more 37mm guns, but I'm not yet sure how to do them best (they are on top the main turrets)
+
+-- 37mm on first main caliber turret
+function script.AimFromWeapon29()
+	return aa37_turret_11
+end
+
+function script.QueryWeapon29()
+	return aa37_flare_11
+end
+
+function script.AimWeapon29(heading, pitch)
+	local tmpHeading
+	tmpHeading = GetPieceRotation(main_turret1)
+	AimTurretedWeapon(heading-tmpHeading, pitch, aa37_turret_11, aa37_sleeve_11, SIG_AIM29, AA37_TURN_SPEED, AA37_PITCH_SPEED)
+end
+
+function script.FireWeapon29()
+	FireGun(aa37_flare_11, aa37_barrel_11, AA37_RECOIL, AA37_RECOIL_SPEED, AA37_RETURN_SPEED, 150, SMALL_MUZZLEFLASH)
+end
+
+function script.AimFromWeapon30()
+	return aa37_turret_12
+end
+
+function script.QueryWeapon30()
+	return aa37_flare_12
+end
+
+function script.AimWeapon30(heading, pitch)
+	local tmpHeading
+	tmpHeading = GetPieceRotation(main_turret1)
+	AimTurretedWeapon(heading-tmpHeading, pitch, aa37_turret_12, aa37_sleeve_12, SIG_AIM30, AA37_TURN_SPEED, AA37_PITCH_SPEED)
+end
+
+function script.FireWeapon30()
+	FireGun(aa37_flare_12, aa37_barrel_12, AA37_RECOIL, AA37_RECOIL_SPEED, AA37_RETURN_SPEED, 150, SMALL_MUZZLEFLASH)
+end
+
+function script.AimFromWeapon31()
+	return aa37_turret_13
+end
+
+function script.QueryWeapon31()
+	return aa37_flare_13
+end
+
+function script.AimWeapon31(heading, pitch)
+	local tmpHeading
+	tmpHeading = GetPieceRotation(main_turret1)
+	AimTurretedWeapon(heading-tmpHeading, pitch, aa37_turret_13, aa37_sleeve_13, SIG_AIM31, AA37_TURN_SPEED, AA37_PITCH_SPEED)
+end
+
+function script.FireWeapon31()
+	FireGun(aa37_flare_13, aa37_barrel_13, AA37_RECOIL, AA37_RECOIL_SPEED, AA37_RETURN_SPEED, 150, SMALL_MUZZLEFLASH)
+end
 
 -- Misc functions
 function script.Create()
@@ -835,6 +919,7 @@ function script.Create()
 end
 
 function Wakes()
+	-- this will produce wakes and smoke while the unit is moving
 	SetSignalMask(SIG_MOVE)
 	while (1 == 1) do
 		EmitSfx(wake1, WAKE)
@@ -848,6 +933,7 @@ function Wakes()
 end
 
 function script.StartMoving()
+	-- spawn a thread which will produce wakes until signal-killed
 	Signal(SIG_MOVE)
 	StartThread(Wakes)
 end
