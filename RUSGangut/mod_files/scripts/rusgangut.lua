@@ -164,7 +164,7 @@ local function AimTurretedWeapon_NoSleeve(heading, pitch, turret, signal, turn_s
 	return true
 end
 
-local function FireWeapon(flare_piece, recoil_piece, recoil_distance, recoil_speed, return_speed, return_delay)
+local function FireGun(flare_piece, recoil_piece, recoil_distance, recoil_speed, return_speed, return_delay)
 	-- Fire a generic weapon which uses the old show/hide flare trick
 	Show(flare_piece)
 	Move(recoil_piece, z_axis, recoil_distance, recoil_speed)
@@ -249,7 +249,7 @@ function script.AimWeapon1(heading, pitch)
 end
 
 function script.FireWeapon1()
-	FireWeapon(main_flares[1][gun1], main_barrels[1][gun1], MAIN_RECOIL, MAIN_RECOIL_SPEED, MAIN_RETURN_SPEED, 150)
+	FireGun(main_flares[1][gun1], main_barrels[1][gun1], MAIN_RECOIL, MAIN_RECOIL_SPEED, MAIN_RETURN_SPEED, 150)
 end
 
 function script.Shot1()
@@ -273,7 +273,7 @@ function script.AimWeapon2(heading, pitch)
 end
 
 function script.FireWeapon2()
-	FireWeapon(main_flares[2][gun2], main_barrels[2][gun2], MAIN_RECOIL, MAIN_RECOIL_SPEED, MAIN_RETURN_SPEED, 150)
+	FireGun(main_flares[2][gun2], main_barrels[2][gun2], MAIN_RECOIL, MAIN_RECOIL_SPEED, MAIN_RETURN_SPEED, 150)
 end
 
 function script.Shot2()
@@ -297,7 +297,7 @@ function script.AimWeapon3(heading, pitch)
 end
 
 function script.FireWeapon3()
-	FireWeapon(main_flares[3][gun3], main_barrels[3][gun3], MAIN_RECOIL, MAIN_RECOIL_SPEED, MAIN_RETURN_SPEED, 150)
+	FireGun(main_flares[3][gun3], main_barrels[3][gun3], MAIN_RECOIL, MAIN_RECOIL_SPEED, MAIN_RETURN_SPEED, 150)
 end
 
 function script.Shot3()
@@ -321,7 +321,7 @@ function script.AimWeapon4(heading, pitch)
 end
 
 function script.FireWeapon4()
-	FireWeapon(main_flares[4][gun4], main_barrels[4][gun4], MAIN_RECOIL, MAIN_RECOIL_SPEED, MAIN_RETURN_SPEED, 150)
+	FireGun(main_flares[4][gun4], main_barrels[4][gun4], MAIN_RECOIL, MAIN_RECOIL_SPEED, MAIN_RETURN_SPEED, 150)
 end
 
 function script.Shot4()
@@ -346,7 +346,7 @@ function script.AimWeapon5(heading, pitch)
 end
 
 function script.FireWeapon5()
-	FireWeapon(side_flare1, side_barrel1, SIDE_RECOIL, SIDE_RECOIL_SPEED, SIDE_RETURN_SPEED, 150)
+	FireGun(side_flare1, side_barrel1, SIDE_RECOIL, SIDE_RECOIL_SPEED, SIDE_RETURN_SPEED, 150)
 end
 
 function script.Shot5()
@@ -366,7 +366,7 @@ function script.AimWeapon6(heading, pitch)
 end
 
 function script.FireWeapon6()
-	FireWeapon(side_flare2, side_barrel2, SIDE_RECOIL, SIDE_RECOIL_SPEED, SIDE_RETURN_SPEED, 150)
+	FireGun(side_flare2, side_barrel2, SIDE_RECOIL, SIDE_RECOIL_SPEED, SIDE_RETURN_SPEED, 150)
 end
 
 function script.Shot6()
@@ -386,7 +386,7 @@ function script.AimWeapon7(heading, pitch)
 end
 
 function script.FireWeapon7()
-	FireWeapon(side_flare3, side_barrel3, SIDE_RECOIL, SIDE_RECOIL_SPEED, SIDE_RETURN_SPEED, 150)
+	FireGun(side_flare3, side_barrel3, SIDE_RECOIL, SIDE_RECOIL_SPEED, SIDE_RETURN_SPEED, 150)
 end
 
 function script.Shot7()
@@ -406,7 +406,7 @@ function script.AimWeapon8(heading, pitch)
 end
 
 function script.FireWeapon8()
-	FireWeapon(side_flare4, side_barrel4, SIDE_RECOIL, SIDE_RECOIL_SPEED, SIDE_RETURN_SPEED, 150)
+	FireGun(side_flare4, side_barrel4, SIDE_RECOIL, SIDE_RECOIL_SPEED, SIDE_RETURN_SPEED, 150)
 end
 
 function script.Shot8()
@@ -426,7 +426,7 @@ function script.AimWeapon9(heading, pitch)
 end
 
 function script.FireWeapon9()
-	FireWeapon(side_flare5, side_barrel5, SIDE_RECOIL, SIDE_RECOIL_SPEED, SIDE_RETURN_SPEED, 150)
+	FireGun(side_flare5, side_barrel5, SIDE_RECOIL, SIDE_RECOIL_SPEED, SIDE_RETURN_SPEED, 150)
 end
 
 function script.Shot9()
@@ -446,7 +446,7 @@ function script.AimWeapon10(heading, pitch)
 end
 
 function script.FireWeapon10()
-	FireWeapon(side_flare6, side_barrel6, SIDE_RECOIL, SIDE_RECOIL_SPEED, SIDE_RETURN_SPEED, 150)
+	FireGun(side_flare6, side_barrel6, SIDE_RECOIL, SIDE_RECOIL_SPEED, SIDE_RETURN_SPEED, 150)
 end
 
 function script.Shot10()
@@ -466,7 +466,7 @@ function script.AimWeapon11(heading, pitch)
 end
 
 function script.FireWeapon11()
-	FireWeapon(side_flare7, side_barrel7, SIDE_RECOIL, SIDE_RECOIL_SPEED, SIDE_RETURN_SPEED, 150)
+	FireGun(side_flare7, side_barrel7, SIDE_RECOIL, SIDE_RECOIL_SPEED, SIDE_RETURN_SPEED, 150)
 end
 
 function script.Shot11()
@@ -486,7 +486,7 @@ function script.AimWeapon12(heading, pitch)
 end
 
 function script.FireWeapon12()
-	FireWeapon(side_flare8, side_barrel8, SIDE_RECOIL, SIDE_RECOIL_SPEED, SIDE_RETURN_SPEED, 150)
+	FireGun(side_flare8, side_barrel8, SIDE_RECOIL, SIDE_RECOIL_SPEED, SIDE_RETURN_SPEED, 150)
 end
 
 function script.Shot12()
@@ -506,7 +506,7 @@ function script.AimWeapon13(heading, pitch)
 end
 
 function script.FireWeapon13()
-	FireWeapon(side_flare9, side_barrel9, SIDE_RECOIL, SIDE_RECOIL_SPEED, SIDE_RETURN_SPEED, 150)
+	FireGun(side_flare9, side_barrel9, SIDE_RECOIL, SIDE_RECOIL_SPEED, SIDE_RETURN_SPEED, 150)
 end
 
 function script.Shot13()
@@ -526,7 +526,7 @@ function script.AimWeapon14(heading, pitch)
 end
 
 function script.FireWeapon14()
-	FireWeapon(side_flare10, side_barrel10, SIDE_RECOIL, SIDE_RECOIL_SPEED, SIDE_RETURN_SPEED, 150)
+	FireGun(side_flare10, side_barrel10, SIDE_RECOIL, SIDE_RECOIL_SPEED, SIDE_RETURN_SPEED, 150)
 end
 
 function script.Shot14()
@@ -546,7 +546,7 @@ function script.AimWeapon15(heading, pitch)
 end
 
 function script.FireWeapon15()
-	FireWeapon(side_flare11, side_barrel11, SIDE_RECOIL, SIDE_RECOIL_SPEED, SIDE_RETURN_SPEED, 150)
+	FireGun(side_flare11, side_barrel11, SIDE_RECOIL, SIDE_RECOIL_SPEED, SIDE_RETURN_SPEED, 150)
 end
 
 function script.Shot15()
@@ -566,7 +566,7 @@ function script.AimWeapon16(heading, pitch)
 end
 
 function script.FireWeapon16()
-	FireWeapon(side_flare12, side_barrel12, SIDE_RECOIL, SIDE_RECOIL_SPEED, SIDE_RETURN_SPEED, 150)
+	FireGun(side_flare12, side_barrel12, SIDE_RECOIL, SIDE_RECOIL_SPEED, SIDE_RETURN_SPEED, 150)
 end
 
 function script.Shot16()
@@ -586,7 +586,7 @@ function script.AimWeapon17(heading, pitch)
 end
 
 function script.FireWeapon17()
-	FireWeapon(side_flare13, side_barrel13, SIDE_RECOIL, SIDE_RECOIL_SPEED, SIDE_RETURN_SPEED, 150)
+	FireGun(side_flare13, side_barrel13, SIDE_RECOIL, SIDE_RECOIL_SPEED, SIDE_RETURN_SPEED, 150)
 end
 
 function script.Shot17()
@@ -606,7 +606,7 @@ function script.AimWeapon18(heading, pitch)
 end
 
 function script.FireWeapon18()
-	FireWeapon(side_flare14, side_barrel14, SIDE_RECOIL, SIDE_RECOIL_SPEED, SIDE_RETURN_SPEED, 150)
+	FireGun(side_flare14, side_barrel14, SIDE_RECOIL, SIDE_RECOIL_SPEED, SIDE_RETURN_SPEED, 150)
 end
 
 function script.Shot18()
@@ -626,7 +626,7 @@ function script.AimWeapon19(heading, pitch)
 end
 
 function script.FireWeapon19()
-	FireWeapon(side_flare15, side_barrel15, SIDE_RECOIL, SIDE_RECOIL_SPEED, SIDE_RETURN_SPEED, 150)
+	FireGun(side_flare15, side_barrel15, SIDE_RECOIL, SIDE_RECOIL_SPEED, SIDE_RETURN_SPEED, 150)
 end
 
 function script.Shot19()
@@ -646,7 +646,7 @@ function script.AimWeapon20(heading, pitch)
 end
 
 function script.FireWeapon20()
-	FireWeapon(side_flare16, side_barrel16, SIDE_RECOIL, SIDE_RECOIL_SPEED, SIDE_RETURN_SPEED, 150)
+	FireGun(side_flare16, side_barrel16, SIDE_RECOIL, SIDE_RECOIL_SPEED, SIDE_RETURN_SPEED, 150)
 end
 
 function script.Shot20()
@@ -667,7 +667,7 @@ function script.AimWeapon21(heading, pitch)
 end
 
 function script.FireWeapon21()
-	FireWeapon(aa76_flare1, aa76_barrel1, AA76_RECOIL, AA76_RECOIL_SPEED, AA76_RETURN_SPEED, 150)
+	FireGun(aa76_flare1, aa76_barrel1, AA76_RECOIL, AA76_RECOIL_SPEED, AA76_RETURN_SPEED, 150)
 end
 
 function script.Shot21()
@@ -687,7 +687,7 @@ function script.AimWeapon22(heading, pitch)
 end
 
 function script.FireWeapon22()
-	FireWeapon(aa76_flare2, aa76_barrel2, AA76_RECOIL, AA76_RECOIL_SPEED, AA76_RETURN_SPEED, 150)
+	FireGun(aa76_flare2, aa76_barrel2, AA76_RECOIL, AA76_RECOIL_SPEED, AA76_RETURN_SPEED, 150)
 end
 
 function script.Shot22()
@@ -707,7 +707,7 @@ function script.AimWeapon23(heading, pitch)
 end
 
 function script.FireWeapon23()
-	FireWeapon(aa76_flare3, aa76_barrel3, AA76_RECOIL, AA76_RECOIL_SPEED, AA76_RETURN_SPEED, 150)
+	FireGun(aa76_flare3, aa76_barrel3, AA76_RECOIL, AA76_RECOIL_SPEED, AA76_RETURN_SPEED, 150)
 end
 
 function script.Shot23()
@@ -727,7 +727,7 @@ function script.AimWeapon24(heading, pitch)
 end
 
 function script.FireWeapon24()
-	FireWeapon(aa76_flare4, aa76_barrel4, AA76_RECOIL, AA76_RECOIL_SPEED, AA76_RETURN_SPEED, 150)
+	FireGun(aa76_flare4, aa76_barrel4, AA76_RECOIL, AA76_RECOIL_SPEED, AA76_RETURN_SPEED, 150)
 end
 
 function script.Shot24()
@@ -747,7 +747,7 @@ function script.AimWeapon25(heading, pitch)
 end
 
 function script.FireWeapon25()
-	FireWeapon(aa76_flare5, aa76_barrel5, AA76_RECOIL, AA76_RECOIL_SPEED, AA76_RETURN_SPEED, 150)
+	FireGun(aa76_flare5, aa76_barrel5, AA76_RECOIL, AA76_RECOIL_SPEED, AA76_RETURN_SPEED, 150)
 end
 
 function script.Shot25()
@@ -767,7 +767,7 @@ function script.AimWeapon26(heading, pitch)
 end
 
 function script.FireWeapon26()
-	FireWeapon(aa76_flare6, aa76_barrel6, AA76_RECOIL, AA76_RECOIL_SPEED, AA76_RETURN_SPEED, 150)
+	FireGun(aa76_flare6, aa76_barrel6, AA76_RECOIL, AA76_RECOIL_SPEED, AA76_RETURN_SPEED, 150)
 end
 
 function script.Shot26()
@@ -788,7 +788,7 @@ function script.AimWeapon27(heading, pitch)
 end
 
 function script.FireWeapon27()
-	FireWeapon(aa37_flare_01, aa37_barrel_01, AA37_RECOIL, AA37_RECOIL_SPEED, AA37_RETURN_SPEED, 150)
+	FireGun(aa37_flare_01, aa37_barrel_01, AA37_RECOIL, AA37_RECOIL_SPEED, AA37_RETURN_SPEED, 150)
 end
 
 function script.Shot27()
@@ -808,7 +808,7 @@ function script.AimWeapon28(heading, pitch)
 end
 
 function script.FireWeapon28()
-	FireWeapon(aa37_flare_02, aa37_barrel_02, AA37_RECOIL, AA37_RECOIL_SPEED, AA37_RETURN_SPEED, 150)
+	FireGun(aa37_flare_02, aa37_barrel_02, AA37_RECOIL, AA37_RECOIL_SPEED, AA37_RETURN_SPEED, 150)
 end
 
 function script.Shot28()
