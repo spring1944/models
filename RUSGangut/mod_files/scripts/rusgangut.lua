@@ -273,6 +273,35 @@ local function Init()
 	for i=9, 16 do
 		Turn(piece("side_turret"..i), y_axis, rad(180))	
 	end
+	StartThread(DamageSmoke)
+end
+
+function DamageSmoke()
+	-- emit some smoke if the unit is damaged
+	-- check if the unit has finished building
+	_,_,_,_,buildProgress = Spring.GetUnitHealth(unitID)
+	while (buildProgress > 0) do
+		Sleep(150)
+	end
+	-- random delay between smoke start
+	timeDelay = math.random(1, 5)*30
+	Sleep(timeDelay)
+	while (1 == 1) do
+		curHealth, maxHealth = Spring.GetUnitHealth(unitID)
+		healthState = curHealth/maxHealth
+		if healthState<66 then
+			EmitSfx(base, BLACK_SMOKE)
+			-- the less HP we have left, the more often the smoke
+			timeDelay = 500 * healthState
+			-- no sence to make a delay shorter than a game frame
+			if timeDelay<30 then
+				timeDelay = 30
+			end
+		else
+			timeDelay = 500
+		end
+		Sleep(timeDelay)
+	end
 end
 
 -- Here the real guns start
