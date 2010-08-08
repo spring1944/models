@@ -1,3 +1,5 @@
+VFS.Include('scripts/UnitScriptConstants.lua')
+
 local deg, rad = math.deg, math.rad
 local GetPieceRotation = Spring.UnitScript.GetPieceRotation
 
@@ -152,8 +154,6 @@ XSMALL_MUZZLEDUST = 1024+6
 MG_MUZZLEFLASH = 1024+7
 LARGE_MUZZLEFLASH = 1024+8
 LARGE_MUZZLEDUST = 1024+9
-WAKE = 3
-BLACK_SMOKE = 256 + 2
 
 -- Aiming and other gun-related functions are generalized
 -- Restore turret angles
@@ -950,12 +950,12 @@ function Wakes()
 	-- this will produce wakes and smoke while the unit is moving
 	SetSignalMask(SIG_MOVE)
 	while (1 == 1) do
-		EmitSfx(wake1, WAKE)
-		EmitSfx(wake2, WAKE)
-		EmitSfx(wake3, WAKE)
-		EmitSfx(wake4, WAKE)
-		EmitSfx(exhaust1, BLACK_SMOKE)
-		EmitSfx(exhaust2, BLACK_SMOKE)
+		EmitSfx(wake1, SFXTYPE.wake1)
+		EmitSfx(wake2, SFXTYPE.wake1)
+		EmitSfx(wake3, SFXTYPE.wake1)
+		EmitSfx(wake4, SFXTYPE.wake1)
+		EmitSfx(exhaust1, SFXTYPE.blacksmoke)
+		EmitSfx(exhaust2, SFXTYPE.blacksmoke)
 		Sleep(150)
 	end
 end
