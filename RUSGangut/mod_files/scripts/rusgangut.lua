@@ -1,4 +1,4 @@
-VFS.Include('scripts/UnitScriptConstants.lua')
+--VFS.Include('scripts/UnitScriptConstants.lua')
 
 local deg, rad = math.deg, math.rad
 local GetPieceRotation = Spring.UnitScript.GetPieceRotation
@@ -282,6 +282,7 @@ function DamageSmoke()
 	_,_,_,_,buildProgress = Spring.GetUnitHealth(unitID)
 	while (buildProgress > 0) do
 		Sleep(150)
+		_,_,_,_,buildProgress = Spring.GetUnitHealth(unitID)
 	end
 	-- random delay between smoke start
 	timeDelay = math.random(1, 5)*30
@@ -290,7 +291,7 @@ function DamageSmoke()
 		curHealth, maxHealth = Spring.GetUnitHealth(unitID)
 		healthState = curHealth/maxHealth
 		if healthState<66 then
-			EmitSfx(base, BLACK_SMOKE)
+			EmitSfx(base, SFX.BLACK_SMOKE)
 			-- the less HP we have left, the more often the smoke
 			timeDelay = 500 * healthState
 			-- no sence to make a delay shorter than a game frame
@@ -950,12 +951,12 @@ function Wakes()
 	-- this will produce wakes and smoke while the unit is moving
 	SetSignalMask(SIG_MOVE)
 	while (1 == 1) do
-		EmitSfx(wake1, SFXTYPE.wake1)
-		EmitSfx(wake2, SFXTYPE.wake1)
-		EmitSfx(wake3, SFXTYPE.wake1)
-		EmitSfx(wake4, SFXTYPE.wake1)
-		EmitSfx(exhaust1, SFXTYPE.blacksmoke)
-		EmitSfx(exhaust2, SFXTYPE.blacksmoke)
+		EmitSfx(wake1, SFX.WAKE)
+		EmitSfx(wake2, SFX.WAKE)
+		EmitSfx(wake3, SFX.WAKE)
+		EmitSfx(wake4, SFX.WAKE)
+		EmitSfx(exhaust1, SFX.BLACK_SMOKE)
+		EmitSfx(exhaust2, SFX.BLACK_SMOKE)
 		Sleep(150)
 	end
 end
