@@ -15,7 +15,7 @@
       <init_from>s44_b_house_2_1.png</init_from>
     </image>
     <image id="s44_b_house_common_2_png_001" name="s44_b_house_common_2_png_001">
-      <init_from>s44_b_house_common_2.png.001.png</init_from>
+      <init_from>s44_b_house_common_2.png</init_from>
     </image>
   </library_images>
   <library_effects>
