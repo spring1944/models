@@ -1,0 +1,11 @@
+1939 Polish artillery
+
+AA: 40mm Bofors (wz.36 Bofors) - towed by C2P tractor - same Bofors gun most of the nations have
+
+AT: 37mm Bofors wz.36 - towed by Polski Fiat 621 truck
+
+Field gun:
+75mm wz.1897 - towed by C4P tractor - this is the buildable version, it was the most common. Same gun French have
+75mm wz.02/26 - towed by Polski Fiat 621 truck - this is for mission only, it was less common. HE weapon is identical to Soviet ZiS-3
+
+Howitzer: 100mm wz. 1914/19 - towed by C4P tractor - this is the same gun Italians have
